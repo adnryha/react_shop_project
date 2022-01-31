@@ -1,6 +1,33 @@
 import React from "react";
 import ReactDom from "react-dom";
 
-const el = <h1> Hello React.js</h1>
+const Header = () => {
+  return (
+    <h1>Header</h1>
+  )
+}
 
-ReactDom.render(el, document.getElementById('root'));
+const Text = () => {
+  return (
+    <>
+      <p>Lorem</p>
+      <p>Lorem</p>
+    </>
+  )
+}
+
+
+
+
+
+const App = () => {
+  return (
+    <>
+      <Header />
+      <Text />
+    </>
+
+  )
+}
+
+ReactDom.render(<App />, document.getElementById('root')); 
