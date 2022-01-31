@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDom from "react-dom";
 
-const Header = () => {
+const Header = (props) => {
   return (
-    <h1>Header</h1>
+    <h1>{props.id}Header {props.title}</h1>
   )
 }
 
@@ -15,15 +15,11 @@ const Text = () => {
     </>
   )
 }
-
-
-
-
-
 const App = () => {
   return (
     <>
-      <Header />
+      <Header title="react" id={1} />
+      <Header title="App.js" id={2} />
       <Text />
     </>
 
