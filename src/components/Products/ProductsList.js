@@ -3,6 +3,7 @@ import Typography from '@mui/material/Typography'
 import { makeStyles } from '@mui/styles'
 import { ProductsListItem } from "components/Products/ProductsListItem"
 import { Grid } from '@mui/material'
+import { productsArray } from 'components/Products/productsArray'
 const useStyles = makeStyles({
   title:
   {
@@ -29,31 +30,17 @@ export const ProductsList = () => {
         justifyContent='space-evenly'
         alignItems='center'
         spacing={3}>
-        <Grid item xs={12} sm={6} md={4}>
-          <ProductsListItem
-            name="iPhone 13 Pro"
-            description="This is iPhone 13 Pro"
-            capacity="128"
-            type="phone"
-            price="1100"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <ProductsListItem
-            name="iPhone 12 Pro"
-            description="This is iPhone 13 Pro"
-            capacity="64"
-            type="phone"
-            price="500" />
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <ProductsListItem
-            name="iPhone 11 Pro"
-            description="This is iPhone 1 Pro"
-            capacity="256"
-            type="phone"
-            price="1000" />
-        </Grid>
+        {productsArray.map((product) => (
+          <Grid item xs={12} sm={6} md={4}>
+            <ProductsListItem
+              name={product.name}
+              description={product.description}
+              capacity={product.capacity}
+              type={product.type}
+              price={product.price}
+            />
+          </Grid>
+        ))}
       </Grid>
     </>
   )
