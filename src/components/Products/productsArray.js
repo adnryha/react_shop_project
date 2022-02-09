@@ -6,6 +6,7 @@ export const productsArray = [
     capacity: '128',
     type: 'phone',
     price: '1100',
+    image: "/images/2.jpg"
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const productsArray = [
     capacity: '128',
     type: 'phone',
     price: '2000',
+    image: '/images/1.jpg'
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ export const productsArray = [
     capacity: '256',
     type: 'phone',
     price: '2500',
+    image: "/images/3.jpg"
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ export const productsArray = [
     capacity: '64',
     type: 'phone',
     price: '1500',
+    image: "/images/4.jpg"
   },
   {
     id: 5,
@@ -38,6 +42,7 @@ export const productsArray = [
     capacity: "128",
     type: 'phone',
     price: '1600',
+    image: "/images/3.jpg"
   },
   {
     id: 6,
@@ -46,5 +51,6 @@ export const productsArray = [
     capacity: '256',
     type: 'phone',
     price: '500',
+    image: "/images/1.jpg"
   },
 ]
