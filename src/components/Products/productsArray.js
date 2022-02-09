@@ -1,5 +1,6 @@
 export const productsArray = [
   {
+    id: 1,
     name: 'iPhone 13 Pro',
     description: 'This is iPhone 13 Pro',
     capacity: '128',
@@ -7,6 +8,7 @@ export const productsArray = [
     price: '1100',
   },
   {
+    id: 2,
     name: 'iPhone 12 Pro',
     description: 'This is iPhone 12 Pro',
     capacity: '128',
@@ -14,6 +16,7 @@ export const productsArray = [
     price: '2000',
   },
   {
+    id: 3,
     name: 'iPhone 13 Pro',
     description: 'This is iPhone 13 Pro',
     capacity: '256',
@@ -21,6 +24,7 @@ export const productsArray = [
     price: '2500',
   },
   {
+    id: 4,
     name: 'iPhone 11 Pro',
     description: 'This is iPhone 11 Pro',
     capacity: '64',
@@ -28,6 +32,7 @@ export const productsArray = [
     price: '1500',
   },
   {
+    id: 5,
     name: 'iPhone X Pro',
     description: 'This is iPhone X Pro',
     capacity: "128",
@@ -35,6 +40,7 @@ export const productsArray = [
     price: '1600',
   },
   {
+    id: 6,
     name: 'iPhone X Pro',
     description: 'This is iPhone X Pro',
     capacity: '256',

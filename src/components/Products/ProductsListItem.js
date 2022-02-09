@@ -1,15 +1,21 @@
 import React from 'react'
 import { Button, Card, CardActions, CardContent } from '@mui/material'
-export const ProductsListItem = (props) => {
+export const ProductsListItem = ({
+    name,
+    description,
+    type,
+    capacity,
+    price,
+}) => {
     return (
         <>
             <Card>
                 <CardContent>
-                    <h4> {props.name} </h4>
-                    <p>{props.description}</p>
-                    <div>Type: {props.type}</div>
-                    <div>Capacity: {props.capacity}</div>
-                    <div>{props.price} $</div>
+                    <h4> {name} </h4>
+                    <p>{description}</p>
+                    <div>Type: {type}</div>
+                    <div>Capacity: {capacity} Gb</div>
+                    <div>{price} $</div>
                 </CardContent>
                 <CardActions>
                     <Button variant="outlined">Add to cart</Button>
