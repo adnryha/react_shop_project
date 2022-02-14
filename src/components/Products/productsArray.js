@@ -42,7 +42,7 @@ export const productsArray = [
     capacity: 128,
     type: 'phone',
     price: 1600,
-    // image: "/images/3.jpg"
+    image: "/images/3.jpg"
   },
   {
     id: 6,
