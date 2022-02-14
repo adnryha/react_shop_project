@@ -7,12 +7,20 @@ export class ProductsListItem extends Component {
 
     state = {
         productCount: 1,
+        color: 'green',
+
     }
-    onIncrementClick() {
+    onIncrementClick = () => {
         this.setState((prevState) => ({
             productCount: prevState.productCount + 1,
         }))
     }
+    onDecrementClick = () => {
+        this.setState((prevState) => ({
+            productCount: prevState.productCount - 1,
+        }))
+    }
+
     render() {
         const { name, description, type, capacity, price, image } = this.props
         return (
@@ -24,11 +32,13 @@ export class ProductsListItem extends Component {
                         </div>
                         <h4> {name} </h4>
                         <p>{description}</p>
+                        <div >Color: {this.state.color}</div>
+                        <Button variant="contained" onClick={() => this.setState({ color: 'red' })}>Change color</Button>
                         <div className='product-features'>Type: {type}</div>
                         <div className='product-features'>Capacity: {capacity} Gb</div>
                         <div className='product-price'>{price} $</div>
                         <div class="product-quantity">
-                            <Button variant="contained">-</Button>
+                            <Button variant="contained" onClick={() => this.onDecrementClick()}>-</Button>
                             <TextField size="small" value={this.state.productCount} />
                             <Button variant="contained" onClick={() => this.onIncrementClick()}>+</Button>
                         </div>
