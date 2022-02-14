@@ -4,11 +4,21 @@ import './ProductsListItem.css'
 import PropTypes from 'prop-types'
 
 export class ProductsListItem extends Component {
+    // // 1
     constructor() {
         super()
-        this.state = {
-            productCount: 1,
-        }
+        this.onIncrementClick = this.onIncrementClick.bind(this)
+
+    }
+    // }
+    // 2
+    state = {
+        productCount: 1,
+    }
+    onIncrementClick() {
+        this.setState((prevState) => ({
+            productCount: prevState.productCount + 1,
+        }))
     }
     render() {
         const { name, description, type, capacity, price, image } = this.props
@@ -27,7 +37,7 @@ export class ProductsListItem extends Component {
                         <div class="product-quantity">
                             <Button variant="contained">-</Button>
                             <TextField size="small" value={this.state.productCount} />
-                            <Button variant="contained">+</Button>
+                            <Button variant="contained" onClick={this.onIncrementClick}>+</Button>
                         </div>
 
                     </CardContent>
