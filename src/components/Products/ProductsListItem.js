@@ -7,22 +7,41 @@ export class ProductsListItem extends Component {
 
     state = {
         productCount: 1,
-        color: 'green',
+        colorGreen: 'green',
+        colorRed: 'red',
+        disabled: true,
 
     }
+    colorChangeClick = () => {
+        this.setState((State) => ({
+            colorGreen: State.colorRed,
+            colorRed: State.colorGreen,
+        }))
+    }
+
     onIncrementClick = () => {
         this.setState((prevState) => ({
             productCount: prevState.productCount + 1,
         }))
+        if (this.state.productCount > 10) {
+            this.button.disabled = true
+        } else {
+            this.button.disabled = false
+        }
     }
     onDecrementClick = () => {
         this.setState((prevState) => ({
             productCount: prevState.productCount - 1,
         }))
-    }
+        if (this.state.productCount <= 1) {
+            this.button.disabled = true
+        } else {
+            this.button.disabled = false
+        }
 
+    }
     render() {
-        const { name, description, type, capacity, price, image } = this.props
+        const { name, description, type, capacity, price, image, } = this.props
         return (
             <>
                 <Card>
@@ -32,15 +51,16 @@ export class ProductsListItem extends Component {
                         </div>
                         <h4> {name} </h4>
                         <p>{description}</p>
-                        <div >Color: {this.state.color}</div>
-                        <Button variant="contained" onClick={() => this.setState({ color: 'red' })}>Change color</Button>
+                        <div className='color'>Color: {this.state.colorGreen}</div>
+                        <Button variant="contained" onClick={() => this.colorChangeClick()}>Change color</Button>
                         <div className='product-features'>Type: {type}</div>
                         <div className='product-features'>Capacity: {capacity} Gb</div>
                         <div className='product-price'>{price} $</div>
                         <div class="product-quantity">
-                            <Button variant="contained" onClick={() => this.onDecrementClick()}>-</Button>
-                            <TextField size="small" value={this.state.productCount} />
-                            <Button variant="contained" onClick={() => this.onIncrementClick()}>+</Button>
+                            <Button variant="contained" disabled={!this.state.productCount} onClick={this.onDecrementClick}>-</Button>
+
+                            <TextField size="small" onChange={e => this.setState({ value: e.target.value })} value={this.state.productCount} />
+                            <Button variant="contained" disabled={!this.state.productCount} onClick={this.onIncrementClick}>+</Button>
                         </div>
 
                     </CardContent>
@@ -67,3 +87,5 @@ ProductsListItem.defaultProps = {
     image: "/images/no.jpg"
 }
 
+// onChange = { e => this.setState({ value: e.target.value }) }
+// disabled = {!this.state.productCount} 
