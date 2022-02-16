@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Card, CardActions, CardContent, TextField } from '@mui/material'
 import './ProductsListItem.css'
 import PropTypes from 'prop-types';
@@ -11,6 +11,7 @@ export const ProductsListItem = ({
     price,
     image
 }) => {
+    const [count, setCount] = useState(2)
     return (
         <>
             <Card>
@@ -24,9 +25,9 @@ export const ProductsListItem = ({
                     <div className='product-features'>Capacity: {capacity} Gb</div>
                     <div className='product-price'>{price} $</div>
                     <div class="product-quantity">
-                        <Button variant="contained">-</Button>
-                        <TextField size="small" value='1' />
-                        <Button variant="contained">+</Button>
+                        <Button variant="contained" onClick={() => setCount(count - 1)}>-</Button>
+                        <TextField size="small" value={count} />
+                        <Button variant="contained" onClick={() => setCount(count + 1)}>+</Button>
                     </div>
 
                 </CardContent>
