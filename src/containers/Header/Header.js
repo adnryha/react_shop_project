@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
@@ -8,7 +8,7 @@ import { Container } from '@mui/material'
 import { Menu } from 'components/Menu/Menu'
 import { CartHeader } from 'components/Cart/CartHeader'
 
-export const Header = () => {
+export const Header = ({ cartData }) => {
   return (
     <>
       <AppBar position="static">
@@ -31,7 +31,7 @@ export const Header = () => {
               Fake Shop
             </Typography>
             <Menu />
-            <CartHeader />
+            <CartHeader cartData={cartData} />
           </Toolbar>
         </Container>
       </AppBar>

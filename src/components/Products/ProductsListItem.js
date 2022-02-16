@@ -14,6 +14,12 @@ export const ProductsListItem = ({
     const [count, setCount] = useState(1)
     const [color, setColor] = useState("green")
 
+
+
+
+
+
+
     const onChangeColor = () =>
         setColor((value) => (value === "green" ? 'red' : 'green'))
 
@@ -24,6 +30,7 @@ export const ProductsListItem = ({
     const onIncrementClick = () => {
         setCount(count + 1)
     }
+
     return (
         <>
             <Card>
@@ -46,7 +53,7 @@ export const ProductsListItem = ({
 
                 </CardContent>
                 <CardActions className='wrap-btn-add-to-cart'>
-                    <Button variant="outlined">Add to cart</Button>
+                    <Button variant="outlined" onClick={count}>Add to cart</Button>
                 </CardActions>
             </Card>
         </>
