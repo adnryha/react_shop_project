@@ -1,5 +1,6 @@
 export const productsArray = [
   {
+
     id: 1,
     name: 'iPhone 13 Pro',
     description: 'This is iPhone 13 Pro',
