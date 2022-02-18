@@ -12,21 +12,21 @@ export const App = () => {
         priceInCart: 0,
     })
 
-    const setTotalData = () => {
+    const addToCart = () => {
         setCartData((prevState) => ({
+            ...prevState,
             totalCount: prevState.totalCount + cartData.countInCart,
-
             totalPrice: prevState.totalPrice + cartData.priceInCart
         })
 
         )
     }
-
     return (
         <>
             <CssBaseline />
             <Header cartData={cartData} />
-            <Main setTotalData={setTotalData} cartData={cartData} />
+            <Main addToCart={addToCart} cartData={cartData} />
+
             <Footer />
         </>
     )
