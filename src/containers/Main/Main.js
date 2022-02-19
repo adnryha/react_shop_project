@@ -8,6 +8,7 @@ export const Main = ({ addToCart, cartData }) => {
         <ProductsList
           addToCart={addToCart}
           cartData={cartData}
+
         />
       </Container>
     </>

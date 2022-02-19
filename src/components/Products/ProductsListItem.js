@@ -3,7 +3,7 @@ import { Button, Card, CardActions, CardContent, TextField } from '@mui/material
 import './ProductsListItem.css'
 import PropTypes from 'prop-types';
 export const ProductsListItem = ({
-
+    id,
     name,
     description,
     type,
@@ -29,13 +29,15 @@ export const ProductsListItem = ({
     cartData.countInCart = count
     cartData.priceInCart = price * count
 
+    console.log(cartData.countInCart)
+    console.log(cartData.priceInCart)
 
     return (
         <>
             <Card>
                 <CardContent>
                     <div className='product-img'>
-                        <img src={image} />
+                        <img src={image} alt="img" />
                     </div>
                     <h4> {name} </h4>
                     <p>{description}</p>
@@ -52,7 +54,7 @@ export const ProductsListItem = ({
 
                 </CardContent>
                 <CardActions className='wrap-btn-add-to-cart'>
-                    <Button variant="outlined" onClick={addToCart} >Add to cart</Button>
+                    <Button variant="outlined" onClick={() => addToCart(price)}   >Add to cart</Button>
 
                 </CardActions>
             </Card>

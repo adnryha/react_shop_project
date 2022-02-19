@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 import CssBaseline from '@mui/material/CssBaseline'
 import { Header } from 'containers/Header/Header'
@@ -10,16 +11,16 @@ export const App = () => {
         totalPrice: 0,
         countInCart: 0,
         priceInCart: 0,
+
     })
 
     const addToCart = () => {
+
         setCartData((prevState) => ({
             ...prevState,
             totalCount: prevState.totalCount + cartData.countInCart,
-            totalPrice: prevState.totalPrice + cartData.priceInCart
-        })
-
-        )
+            totalPrice: prevState.totalPrice + cartData.priceInCart,
+        }))
     }
     return (
         <>
