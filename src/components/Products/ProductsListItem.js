@@ -10,8 +10,8 @@ export const ProductsListItem = ({
     capacity,
     price,
     image,
-    addToCart,
-    cartData,
+    addProductToCart,
+
 }) => {
     const [count, setCount] = useState(1)
     const [color, setColor] = useState("green")
@@ -25,15 +25,11 @@ export const ProductsListItem = ({
     const onIncrementClick = () => {
         setCount(count + 1)
     }
-    const elementUpdate = () => {
-        setCount(count + 1 - 1)
-    }
 
-    cartData.count = count
-    cartData.price = price
 
-    console.log(cartData.countInCart)
-    console.log(cartData.priceInCart)
+
+
+
 
     return (
         <>
@@ -57,7 +53,7 @@ export const ProductsListItem = ({
 
                 </CardContent>
                 <CardActions className='wrap-btn-add-to-cart'>
-                    <Button onClick={elementUpdate} variant="outlined" onClick={addToCart}    >Add to cart</Button>
+                    <Button variant="outlined" onClick={() => addProductToCart(count, price)}    >Add to cart</Button>
 
                 </CardActions>
             </Card>
