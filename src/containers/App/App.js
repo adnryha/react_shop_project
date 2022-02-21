@@ -9,19 +9,19 @@ export const App = () => {
     const [cartData, setCartData] = useState({
         totalCount: 0,
         totalPrice: 0,
-        countInCart: 0,
-        priceInCart: 0,
+        count: 0,
+        price: 0,
 
     })
 
-    const addToCart = () => {
+    const addProductToCart = (count, price) =>
 
         setCartData((prevState) => ({
-            ...prevState,
-            totalCount: prevState.totalCount + cartData.countInCart,
-            totalPrice: prevState.totalPrice + cartData.priceInCart,
+
+            totalCount: prevState.totalCount + cartData.count,
+            totalPrice: prevState.totalPrice + cartData.price * cartData.count,
         }))
-    }
+
     return (
         <>
             <CssBaseline />

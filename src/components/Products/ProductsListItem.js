@@ -25,9 +25,12 @@ export const ProductsListItem = ({
     const onIncrementClick = () => {
         setCount(count + 1)
     }
+    const elementUpdate = () => {
+        setCount(count + 1 - 1)
+    }
 
-    cartData.countInCart = count
-    cartData.priceInCart = price * count
+    cartData.count = count
+    cartData.price = price
 
     console.log(cartData.countInCart)
     console.log(cartData.priceInCart)
@@ -54,7 +57,7 @@ export const ProductsListItem = ({
 
                 </CardContent>
                 <CardActions className='wrap-btn-add-to-cart'>
-                    <Button variant="outlined" onClick={() => addToCart(price)}   >Add to cart</Button>
+                    <Button onClick={elementUpdate} variant="outlined" onClick={addToCart}    >Add to cart</Button>
 
                 </CardActions>
             </Card>
